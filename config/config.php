@@ -5,18 +5,18 @@
  * This is the place where your database login constants are saved
  *
  * For more info about constants please @see http://php.net/manual/en/function.define.php
- * If you want to know why we use "define" instead of "const" @see http://stackoverflow.com/q/2447791/1114320
+ * If you want to know why we use 'define' instead of 'const' @see http://stackoverflow.com/q/2447791/1114320
  *
- * DB_HOST: database host, usually it's "127.0.0.1" or "localhost", some servers also need port info
+ * DB_HOST: database host, usually it's '127.0.0.1' or 'localhost', some servers also need port info
  * DB_NAME: name of the database. please note: database and database table are not the same thing
  * DB_USER: user for your database. the user needs to have rights for SELECT, UPDATE, DELETE and INSERT.
- *          by the way, it's bad style to use "root", but for development it will work.
+ *          by the way, it's bad style to use 'root', but for development it will work.
  * DB_PASS: the password of the above user
  */
-define("DB_HOST", "127.0.0.1");
-define("DB_NAME", "login");
-define("DB_USER", "root");
-define("DB_PASS", "mysql");
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'login');
+define('DB_USER', 'root');
+define('DB_PASS', 'mysql');
 
 /**
  * Configuration for: Cookies
@@ -33,9 +33,9 @@ define("DB_PASS", "mysql");
  * COOKIE_DOMAIN: The domain where the cookie is valid for, like '.mydomain.com'
  * COOKIE_SECRET_KEY: Put a random value here to make your app more secure. When changed, all cookies are reset.
  */
-define("COOKIE_RUNTIME", 1209600);
-define("COOKIE_DOMAIN", ".127.0.0.1");
-define("COOKIE_SECRET_KEY", "1gp@TMPS{+$78sfpMJFe-92s");
+define('COOKIE_RUNTIME', 1209600);
+define('COOKIE_DOMAIN', '.127.0.0.1');
+define('COOKIE_SECRET_KEY', '1gp@TMPS{+$78sfpMJFe-92s');
 
 /**
  * Configuration for: Email server credentials
@@ -46,48 +46,48 @@ define("COOKIE_SECRET_KEY", "1gp@TMPS{+$78sfpMJFe-92s");
  * and fill in your SMTP provider account data.
  *
  * An example setup for using gmail.com [Google Mail] as email sending service,
- * works perfectly in August 2013. Change the "xxx" to your needs.
+ * works perfectly in August 2013. Change the 'xxx' to your needs.
  * Please note that there are several issues with gmail, like gmail will block your server
- * for "spam" reasons or you'll have a daily sending limit. See the readme.md for more info.
+ * for 'spam' reasons or you'll have a daily sending limit. See the readme.md for more info.
  *
- * define("EMAIL_USE_SMTP", true);
- * define("EMAIL_SMTP_HOST", "ssl://smtp.gmail.com");
- * define("EMAIL_SMTP_AUTH", true);
- * define("EMAIL_SMTP_USERNAME", "xxxxxxxxxx@gmail.com");
- * define("EMAIL_SMTP_PASSWORD", "xxxxxxxxxxxxxxxxxxxx");
- * define("EMAIL_SMTP_PORT", 465);
- * define("EMAIL_SMTP_ENCRYPTION", "ssl");
+ * define('EMAIL_USE_SMTP', true);
+ * define('EMAIL_SMTP_HOST', 'ssl://smtp.gmail.com');
+ * define('EMAIL_SMTP_AUTH', true);
+ * define('EMAIL_SMTP_USERNAME', 'xxxxxxxxxx@gmail.com');
+ * define('EMAIL_SMTP_PASSWORD', 'xxxxxxxxxxxxxxxxxxxx');
+ * define('EMAIL_SMTP_PORT', 465);
+ * define('EMAIL_SMTP_ENCRYPTION', 'ssl');
  *
  * It's really recommended to use SMTP!
  *
  */
-define("EMAIL_USE_SMTP", false);
-define("EMAIL_SMTP_HOST", "yourhost");
-define("EMAIL_SMTP_AUTH", true);
-define("EMAIL_SMTP_USERNAME", "yourusername");
-define("EMAIL_SMTP_PASSWORD", "yourpassword");
-define("EMAIL_SMTP_PORT", 465);
-define("EMAIL_SMTP_ENCRYPTION", "ssl");
+define('EMAIL_USE_SMTP', false);
+define('EMAIL_SMTP_HOST', 'yourhost');
+define('EMAIL_SMTP_AUTH', true);
+define('EMAIL_SMTP_USERNAME', 'yourusername');
+define('EMAIL_SMTP_PASSWORD', 'yourpassword');
+define('EMAIL_SMTP_PORT', 465);
+define('EMAIL_SMTP_ENCRYPTION', 'ssl');
 
 /**
  * Configuration for: password reset email data
  * Set the absolute URL to password_reset.php, necessary for email password reset links
  */
-define("EMAIL_PASSWORDRESET_URL", "http://127.0.0.1/php-login-advanced/password_reset.php");
-define("EMAIL_PASSWORDRESET_FROM", "no-reply@example.com");
-define("EMAIL_PASSWORDRESET_FROM_NAME", "My Project");
-define("EMAIL_PASSWORDRESET_SUBJECT", "Password reset for PROJECT XY");
-define("EMAIL_PASSWORDRESET_CONTENT", "Please click on this link to reset your password:");
+define('EMAIL_PASSWORDRESET_URL', 'http://127.0.0.1/php-login-advanced/password_reset.php');
+define('EMAIL_PASSWORDRESET_FROM', 'no-reply@example.com');
+define('EMAIL_PASSWORDRESET_FROM_NAME', 'My Project');
+define('EMAIL_PASSWORDRESET_SUBJECT', 'Password reset for PROJECT XY');
+define('EMAIL_PASSWORDRESET_CONTENT', 'Please click on this link to reset your password:');
 
 /**
  * Configuration for: verification email data
  * Set the absolute URL to register.php, necessary for email verification links
  */
-define("EMAIL_VERIFICATION_URL", "http://127.0.0.1/php-login-advanced/register.php");
-define("EMAIL_VERIFICATION_FROM", "no-reply@example.com");
-define("EMAIL_VERIFICATION_FROM_NAME", "My Project");
-define("EMAIL_VERIFICATION_SUBJECT", "Account activation for PROJECT XY");
-define("EMAIL_VERIFICATION_CONTENT", "Please click on this link to activate your account:");
+define('EMAIL_VERIFICATION_URL', 'http://127.0.0.1/php-login-advanced/register.php');
+define('EMAIL_VERIFICATION_FROM', 'no-reply@example.com');
+define('EMAIL_VERIFICATION_FROM_NAME', 'My Project');
+define('EMAIL_VERIFICATION_SUBJECT', 'Account activation for PROJECT XY');
+define('EMAIL_VERIFICATION_CONTENT', 'Please click on this link to activate your account:');
 
 /**
  * Configuration for: Hashing strength
@@ -112,4 +112,4 @@ define("EMAIL_VERIFICATION_CONTENT", "Please click on this link to activate your
  *
  * This constant will be used in the login and the registration class.
  */
-define("HASH_COST_FACTOR", "10");
+define('HASH_COST_FACTOR', '10');
