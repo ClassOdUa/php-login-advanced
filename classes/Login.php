@@ -20,11 +20,11 @@ class Login
     /**
      * @var string $user_name The user's name
      */
-    private $user_name = "";
+    private $user_name = '';
     /**
      * @var string $user_email The user's mail
      */
-    private $user_email = "";
+    private $user_email = '';
     /**
      * @var boolean $user_is_logged_in The user's login status
      */
@@ -32,11 +32,11 @@ class Login
     /**
      * @var string $user_gravatar_image_url The user's gravatar profile pic url (or a default one)
      */
-    public $user_gravatar_image_url = "";
+    public $user_gravatar_image_url = '';
     /**
      * @var string $user_gravatar_image_tag The user's gravatar profile pic url with <img ... /> around
      */
-    public $user_gravatar_image_tag = "";
+    public $user_gravatar_image_tag = '';
     /**
      * @var boolean $password_reset_link_is_valid Marker for view handling
      */
@@ -74,7 +74,7 @@ class Login
         //    logged-in-status is written into his session data on the server. this is the typical behaviour of common login scripts.
 
         // if user tried to log out
-        if (isset($_GET["logout"])) {
+        if (isset($_GET['logout'])) {
             $this->doLogout();
 
         // if user has an active session on the server
@@ -83,15 +83,15 @@ class Login
 
             // checking for form submit from editing screen
             // user try to change his username
-            if (isset($_POST["user_edit_submit_name"])) {
+            if (isset($_POST['user_edit_submit_name'])) {
                 // function below uses use $_SESSION['user_id'] et $_SESSION['user_email']
                 $this->editUserName($_POST['user_name']);
             // user try to change his email
-            } elseif (isset($_POST["user_edit_submit_email"])) {
+            } elseif (isset($_POST['user_edit_submit_email'])) {
                 // function below uses use $_SESSION['user_id'] et $_SESSION['user_email']
                 $this->editUserEmail($_POST['user_email']);
             // user try to change his password
-            } elseif (isset($_POST["user_edit_submit_password"])) {
+            } elseif (isset($_POST['user_edit_submit_password'])) {
                 // function below uses $_SESSION['user_name'] and $_SESSION['user_id']
                 $this->editUserPassword($_POST['user_password_old'], $_POST['user_password_new'], $_POST['user_password_repeat']);
             }
@@ -101,7 +101,7 @@ class Login
             $this->loginWithCookieData();
 
         // if user just submitted a login form
-        } elseif (isset($_POST["login"])) {
+        } elseif (isset($_POST['login'])) {
             if (!isset($_POST['user_rememberme'])) {
                 $_POST['user_rememberme'] = null;
             }
@@ -109,11 +109,11 @@ class Login
         }
 
         // checking if user requested a password reset mail
-        if (isset($_POST["request_password_reset"]) && isset($_POST['user_name'])) {
+        if (isset($_POST['request_password_reset']) && isset($_POST['user_name'])) {
             $this->setPasswordResetDatabaseTokenAndSendMail($_POST['user_name']);
-        } elseif (isset($_GET["user_name"]) && isset($_GET["verification_code"])) {
-            $this->checkIfEmailVerificationCodeIsValid($_GET["user_name"], $_GET["verification_code"]);
-        } elseif (isset($_POST["submit_new_password"])) {
+        } elseif (isset($_GET['user_name']) && isset($_GET['verification_code'])) {
+            $this->checkIfEmailVerificationCodeIsValid($_GET['user_name'], $_GET['verification_code']);
+        } elseif (isset($_POST['submit_new_password'])) {
             $this->editNewPassword($_POST['user_name'], $_POST['user_password_reset_hash'], $_POST['user_password_new'], $_POST['user_password_repeat']);
         }
 
@@ -358,7 +358,7 @@ class Login
             $cookie_string = $cookie_string_first_part . ':' . $cookie_string_hash;
 
             // set cookie
-            setcookie('rememberme', $cookie_string, time() + COOKIE_RUNTIME, "/", COOKIE_DOMAIN);
+            setcookie('rememberme', $cookie_string, time() + COOKIE_RUNTIME, '/', COOKIE_DOMAIN);
         }
     }
 
@@ -450,7 +450,7 @@ class Login
         // prevent database flooding
         $user_email = substr(trim($user_email), 0, 64);
 
-        if (!empty($user_email) && $user_email == $_SESSION["user_email"]) {
+        if (!empty($user_email) && $user_email == $_SESSION['user_email']) {
             $this->errors[] = MESSAGE_EMAIL_SAME_LIKE_OLD_ONE;
         // user mail cannot be empty and must be in email format
         } elseif (empty($user_email) || !filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
