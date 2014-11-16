@@ -26,3 +26,4 @@ $registration = new Registration();
 
 // showing the register view (with the registration form, and messages/errors)
 include('./views/register.php');
+?>
